@@ -48,6 +48,7 @@
     --blur-lg: 18px;
     --nav-height: 68px;
 }
+
 [data-theme="light"] {
     --color-app-bg: #e8f7ee;
     --color-bg: #f6fff9;

@@ -1,7 +1,7 @@
 import HomeView from '../components/home/HomeView'
 import NavBar from '../components/nav/NavBar'
 import Footer from '../components/footer/Footer'
-import { ThemeProvider } from './ThemeContext'
+import {ThemeProvider} from './ThemeContext'
 
 function App() {
     return (
