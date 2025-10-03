@@ -1,0 +1,143 @@
+.inqModal {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inqModal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(6px);
+}
+
+.inqModal__panel {
+    position: relative;
+    width: min(520px, 92%);
+    background: var(--overlay-panel);
+    border: 1px solid var(--layer-white-12);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 34px 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.inqModal__close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: 0;
+    color: var(--color-text-secondary);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.inqModal__close:hover, .inqModal__close:focus-visible {
+    color: var(--color-text-primary);
+}
+
+.inqForm {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.inqForm__title {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--color-text-primary);
+    letter-spacing: .5px;
+}
+
+.inqForm__fields {
+    display: grid;
+    gap: 18px 22px;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 520px) {
+    .inqForm__fields {
+        grid-template-columns: 1fr;
+    }
+}
+
+.inqField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.inqField__label {
+    font-size: .65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    color: var(--color-text-faint);
+}
+
+.inqField__input {
+    background: var(--overlay-panel-soft);
+    border: 1px solid var(--layer-white-12);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--color-text-primary);
+    outline: none;
+}
+
+.inqField__input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--overlay-panel-soft);
+}
+
+.inqField__input[aria-invalid='true'] {
+    border-color: var(--color-danger);
+}
+
+.inqField__error {
+    font-size: .58rem;
+    color: var(--color-danger);
+    letter-spacing: .4px;
+}
+
+.inqForm__actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.inqThanks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+}
+
+.inqThanks__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inqThanks__title {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--color-text-primary);
+}
+
+.inqThanks__msg {
+    margin: 0;
+    font-size: .75rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+

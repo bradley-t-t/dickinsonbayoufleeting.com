@@ -1,0 +1,7 @@
+.btn{position:relative;appearance:none;border:0;cursor:pointer;font-size:.9rem;font-weight:600;padding:12px 24px;border-radius:var(--radius-md);letter-spacing:.5px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background var(--transition-fast),color var(--transition-fast),box-shadow var(--transition-fast),transform var(--transition-fast);text-decoration:none}
+.btn--primary{background:var(--color-accent);color:var(--color-text-on-accent);box-shadow:var(--shadow-sm)}
+.btn--primary:hover,.btn--primary:focus-visible{background:var(--color-accent-hover);box-shadow:var(--shadow-md)}
+.btn--ghost{background:var(--layer-white-6);color:var(--color-text-primary);backdrop-filter:blur(var(--blur-sm))}
+.btn--ghost:hover,.btn--ghost:focus-visible{background:var(--layer-white-12)}
+.btn--inline{background:var(--layer-white-8);color:var(--color-text-primary);padding:8px 16px;font-size:.65rem;text-transform:uppercase;letter-spacing:1px}
+.btn--inline:hover,.btn--inline:focus-visible{background:var(--layer-white-16)}

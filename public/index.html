@@ -2,42 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <link href="%PUBLIC_URL%/favicon.ico" rel="icon"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="%PUBLIC_URL%/images/DBF-Icon.png" rel="icon" sizes="32x32" type="image/png"/>
+    <link href="%PUBLIC_URL%/images/DBF-Icon.png" rel="icon" sizes="192x192" type="image/png"/>
+    <link href="%PUBLIC_URL%/images/DBF-Icon.png" rel="shortcut icon"/>
+    <link href="%PUBLIC_URL%/images/DBF-Icon.png" rel="apple-touch-icon"/>
+    <link href="https://dickinsonbayoufleeting.com/" rel="canonical"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
     <meta content="#000000" name="theme-color"/>
-    <meta
-            content="Web site created using create-react-app"
-            name="description"
-    />
-    <link href="%PUBLIC_URL%/logo192.png" rel="apple-touch-icon"/>
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta content="dark light" name="color-scheme"/>
+    <meta content="index,follow" name="robots"/>
+    <meta content="Waterfront dock space leasing in Texas. Secure long-term acreage with dedicated slip access and on-site assistance at Freeport and San Leon facilities."
+          name="description"/>
+    <meta content="Dickinson Bayou Fleeting" property="og:site_name"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://dickinsonbayoufleeting.com/" property="og:url"/>
+    <meta content="Dickinson Bayou Fleeting | Waterfront Dock Space Leasing" property="og:title"/>
+    <meta content="Long-term waterfront acreage, dedicated slip access, on-site assistance. Explore Freeport and San Leon lease options."
+          property="og:description"/>
+    <meta content="https://dickinsonbayoufleeting.com/images/DBF-Logo-White.png" property="og:image"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="Dickinson Bayou Fleeting | Waterfront Dock Space Leasing" name="twitter:title"/>
+    <meta content="Long-term waterfront acreage, dedicated slip access, on-site assistance."
+          name="twitter:description"/>
+    <meta content="https://dickinsonbayoufleeting.com/images/DBF-Logo-White.png" name="twitter:image"/>
+    <link as="image" href="/images/DBF-Logo-White.png" rel="preload"/>
     <link href="%PUBLIC_URL%/manifest.json" rel="manifest"/>
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>Dickinson Bayou Fleeting | Waterfront Dock Space Leasing</title>
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "name": "Dickinson Bayou Fleeting",
+                "url": "https://dickinsonbayoufleeting.com/",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://dickinsonbayoufleeting.com/?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "Organization",
+                "name": "Dickinson Bayou Fleeting",
+                "url": "https://dickinsonbayoufleeting.com/",
+                "logo": "https://dickinsonbayoufleeting.com/images/DBF-Logo-White.png"
+            },
+            {
+                "@type": "LocalBusiness",
+                "name": "Freeport Facility",
+                "image": "https://dickinsonbayoufleeting.com/images/DBF-Logo-White.png",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "906 Marlin Ln",
+                    "addressLocality": "Freeport",
+                    "addressRegion": "TX",
+                    "postalCode": "77541",
+                    "addressCountry": "US"
+                },
+                "telephone": "+1-713-859-0169"
+            },
+            {
+                "@type": "LocalBusiness",
+                "name": "San Leon Facility",
+                "image": "https://dickinsonbayoufleeting.com/images/DBF-Logo-White.png",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "2629 Avenue R",
+                    "addressLocality": "Dickinson",
+                    "addressRegion": "TX",
+                    "postalCode": "77539",
+                    "addressCountry": "US"
+                },
+                "telephone": "+1-713-859-0169"
+            }
+        ]
+    }</script>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
-<!--
-  This HTML file is a template.
-  If you open it directly in the browser, you will see an empty page.
-
-  You can add webfonts, meta tags, or analytics to this file.
-  The build step will place the bundled scripts into the <body> tag.
-
-  To begin the development, run `npm start` or `yarn start`.
-  To create a production bundle, use `npm run build` or `yarn build`.
--->
 </body>
 </html>
