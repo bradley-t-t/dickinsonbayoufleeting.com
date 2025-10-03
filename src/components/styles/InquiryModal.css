@@ -141,3 +141,514 @@
     color: var(--color-text-secondary);
 }
 
+.inqShell {
+    position: relative;
+    width: min(640px, 92%);
+    background: var(--overlay-panel);
+    border: 1px solid var(--layer-white-12);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 46px 48px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    backdrop-filter: blur(var(--blur-lg));
+}
+
+.inqShell--done {
+    padding: 60px 56px 64px;
+}
+
+@media (max-width: 700px) {
+    .inqShell {
+        padding: 42px 32px 40px;
+    }
+
+    .inqShell--done {
+        padding: 54px 40px 54px;
+    }
+}
+
+.inqClose {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: 0;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 4px;
+}
+
+.inqClose:hover, .inqClose:focus-visible {
+    color: var(--color-text-primary);
+}
+
+.inqLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    height: 100%;
+}
+
+.inqGrid {
+    display: grid;
+    gap: 22px 26px;
+    grid-template-columns: 1fr 1fr;
+    flex: 0 0 auto;
+}
+
+.inqField--full {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 620px) {
+    .inqGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.inqField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.inqField__label {
+    font-size: .6rem;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+}
+
+.inqInput, .inqTextarea {
+    background: var(--overlay-panel-soft);
+    border: 1px solid var(--layer-white-12);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--color-text-primary);
+    resize: none;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.inqInput:focus, .inqTextarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--overlay-panel-soft);
+}
+
+.inqInput[aria-invalid='true'], .inqTextarea[aria-invalid='true'] {
+    border-color: var(--color-danger);
+}
+
+.inqErr {
+    font-size: .58rem;
+    color: var(--color-danger);
+    letter-spacing: .4px;
+}
+
+.inqCounter {
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    font-size: .55rem;
+    letter-spacing: .5px;
+    color: var(--color-text-faint);
+}
+
+.inqActions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.inqBtn {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: .6px;
+    border-radius: var(--radius-md);
+    padding: 12px 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+}
+
+.inqBtn--primary {
+    background: var(--color-accent);
+    color: var(--color-text-on-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.inqBtn--primary:hover, .inqBtn--primary:focus-visible {
+    background: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.inqBtn--ghost {
+    background: var(--overlay-panel-soft);
+    color: var(--color-text-secondary);
+}
+
+.inqBtn--ghost:hover, .inqBtn--ghost:focus-visible {
+    color: var(--color-text-primary);
+    background: var(--layer-white-12);
+}
+
+.inqBtn--call {
+    background: var(--overlay-panel-soft);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.inqBtn--call:hover, .inqBtn--call:focus-visible {
+    background: var(--color-accent);
+    color: var(--color-text-on-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.inqBtn[disabled] {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.inqBtn--primary[data-busy='true'] {
+    position: relative;
+}
+
+.inqBtn--primary[data-busy='true']::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--color-text-on-accent);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: inqSpin .8s linear infinite;
+    display: inline-block;
+}
+
+.inqLive {
+    min-height: 14px;
+    font-size: .6rem;
+    letter-spacing: .5px;
+    color: var(--color-danger);
+}
+
+.inqResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.inqResult__icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-text-on-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+}
+
+.inqResult__title {
+    margin: 0;
+    font-size: 1.3rem;
+    letter-spacing: .6px;
+    color: var(--color-text-primary);
+}
+
+.inqResult__text {
+    margin: 0;
+    font-size: .85rem;
+    line-height: 1.6;
+    max-width: 520px;
+    color: var(--color-text-secondary);
+}
+
+.inqResult__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.inqLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    height: 100%;
+}
+
+.inqGrid {
+    display: grid;
+    gap: 22px 26px;
+    grid-template-columns: 1fr 1fr;
+    flex: 0 0 auto;
+}
+
+.inqField--full {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 620px) {
+    .inqGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.inqField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.inqField__label {
+    font-size: .6rem;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+}
+
+.inqInput, .inqTextarea {
+    background: var(--overlay-panel-soft);
+    border: 1px solid var(--layer-white-12);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--color-text-primary);
+    resize: none;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.inqInput:focus, .inqTextarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--overlay-panel-soft);
+}
+
+.inqInput[aria-invalid='true'], .inqTextarea[aria-invalid='true'] {
+    border-color: var(--color-danger);
+}
+
+.inqErr {
+    font-size: .58rem;
+    color: var(--color-danger);
+    letter-spacing: .4px;
+}
+
+.inqCounter {
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    font-size: .55rem;
+    letter-spacing: .5px;
+    color: var(--color-text-faint);
+}
+
+.inqActions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.inqBtn {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: .6px;
+    border-radius: var(--radius-md);
+    padding: 12px 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+}
+
+.inqBtn--primary {
+    background: var(--color-accent);
+    color: var(--color-text-on-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.inqBtn--primary:hover, .inqBtn--primary:focus-visible {
+    background: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.inqBtn--ghost {
+    background: var(--overlay-panel-soft);
+    color: var(--color-text-secondary);
+}
+
+.inqBtn--ghost:hover, .inqBtn--ghost:focus-visible {
+    color: var(--color-text-primary);
+    background: var(--layer-white-12);
+}
+
+.inqBtn--call {
+    background: var(--overlay-panel-soft);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.inqBtn--call:hover, .inqBtn--call:focus-visible {
+    background: var(--color-accent);
+    color: var(--color-text-on-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.inqBtn[disabled] {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.inqBtn--primary[data-busy='true'] {
+    position: relative;
+}
+
+.inqBtn--primary[data-busy='true']::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--color-text-on-accent);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: inqSpin .8s linear infinite;
+    display: inline-block;
+}
+
+.inqLive {
+    min-height: 14px;
+    font-size: .6rem;
+    letter-spacing: .5px;
+    color: var(--color-danger);
+}
+
+.inqResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.inqResult__icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-text-on-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+}
+
+.inqResult__title {
+    margin: 0;
+    font-size: 1.3rem;
+    letter-spacing: .6px;
+    color: var(--color-text-primary);
+}
+
+.inqResult__text {
+    margin: 0;
+    font-size: .85rem;
+    line-height: 1.6;
+    max-width: 520px;
+    color: var(--color-text-secondary);
+}
+
+.inqResult__actions {
+    display: flex;
+    gap: 12px;
+}
+
+@keyframes inqSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .inqBtn--primary[data-busy='true']::after {
+        animation: none;
+    }
+}
+
+.inqShell[data-phase='form'] {
+    animation: inqFadeUp .35s var(--transition-base);
+}
+
+.inqShell--done {
+    animation: inqFadeScale .4s var(--transition-base);
+}
+
+@keyframes inqFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes inqFadeScale {
+    from {
+        opacity: 0;
+        transform: scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.inqFooter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.inqFooter--actions {
+    margin-top: auto;
+    justify-content: flex-end;
+    padding-top: 8px;
+}
+
+.inqActions--right {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+}
